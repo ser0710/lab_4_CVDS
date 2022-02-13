@@ -11,6 +11,13 @@ public class OriginalScore implements GameScore{
      */
     @Override
     public int calculateScore(int count, int incorrectCount) {
-        return 0;
+        int puntaje = 100;
+        if (incorrectCount >= 10){
+            puntaje = 0;
+        }
+        else{
+            puntaje -= incorrectCount * 10;
+        }
+        return puntaje;
     }
 }

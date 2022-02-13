@@ -1,4 +1,5 @@
 package hangman.model;
+import java.lang.Math.*;
 
 public class PowerScore implements GameScore{
     /**
@@ -15,6 +16,16 @@ public class PowerScore implements GameScore{
      */
     @Override
     public int calculateScore(int count, int incorrectCount) {
-        return 0;
+        int puntaje;
+        if(incorrectCount * 8 > Math.pow(5, count)){
+            puntaje = 0;
+        }
+        else if(Math.pow(5, count) - incorrectCount * 8 > 500){
+            puntaje = 500;
+        }
+        else{
+            puntaje = (int) Math.pow(5, count) - incorrectCount * 8;
+        }
+        return puntaje;
     }
 }
