@@ -10,7 +10,7 @@ public class BonusScore implements GameScore{
      * @return puntaje realizado por el jugador
      */
     @Override
-    public int calculateSocre(int count, int incorrectCount) {
+    public int calculateScore(int count, int incorrectCount) {
         return 0;
     }
 }
