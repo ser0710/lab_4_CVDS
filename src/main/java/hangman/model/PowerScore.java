@@ -2,6 +2,7 @@ package hangman.model;
 import java.lang.Math.*;
 
 public class PowerScore implements GameScore{
+    private int puntaje = 0;
     /**
      * precondicion: Los parametros deben ser mayores a cero
      * postcondicion: si 5 elevado a las correctas es menor a 8 multiplicado
@@ -16,7 +17,6 @@ public class PowerScore implements GameScore{
      */
     @Override
     public int calculateScore(int count, int incorrectCount) {
-        int puntaje;
         if(incorrectCount * 8 > Math.pow(5, count)){
             puntaje = 0;
         }
@@ -26,6 +26,11 @@ public class PowerScore implements GameScore{
         else{
             puntaje = (int) Math.pow(5, count) - incorrectCount * 8;
         }
+        return puntaje;
+    }
+
+    @Override
+    public int getScore() {
         return puntaje;
     }
 }
